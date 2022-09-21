@@ -1,2 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+class Bank
+{
+    private string name;
+    
+} 
+
+class Client
+{
+    private string name;
+    private string surname;
+    private string fiscalCode;
+    private double salary;
+}
+
+class Loans
+{
+    private int id;
+    private string client;
+    private int amount;
+    private int rate;
+    private int startRateYear;
+    private int endRateYear;
+}
