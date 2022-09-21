@@ -4,6 +4,10 @@ Client user1 = new Client("Mario", "Rossi", "AAAAA", 25000.00);
 Client user2 = new Client("Paolo", "Biondi", "BBBBB", 17000.10);
 Client user3 = new Client("Carlo", "Neri", "CCCCC", 4900.80);
 
+Loans loan1 = new Loans("user1", 15000, 312.50, 2022, 2024);
+Loans loan2 = new Loans("user2", 30000, 625.00, 2022, 2024);
+Loans loan3 = new Loans("user3", 5000, 106.34, 2022, 2024);
+
 class Bank
 {
     private string name;
@@ -34,6 +38,7 @@ class Client
         this.FiscalCode = fiscalCode;   
         this.Salary = salary;
         Client.clientID++;
+        Console.WriteLine(Client.clientID);
     }
 
     
@@ -43,17 +48,17 @@ class Loans
 {
     static public int loanID = 0;
     private string client;
-    private int amount;
-    private int rate;
+    private double amount;
+    private double rate;
     private int startRateYear;
     private int endRateYear;
     public string Client { get; set; }
-    public int Amount { get; set; }
-    public int Rate { get; set; }   
+    public double Amount { get; set; }
+    public double Rate { get; set; }   
     public int StartRateYear { get; set; }
     public int EndRateYear { get; set; }
 
-    public Loans(string client, int amount, int rate, int startRateYear, int endRateYear)
+    public Loans(string client, double amount, double rate, int startRateYear, int endRateYear)
     {
         this.Client = client;
         this.Amount = amount;
@@ -61,6 +66,7 @@ class Loans
         this.StartRateYear = startRateYear;
         this.EndRateYear = endRateYear;
         Loans.loanID++;
+        Console.WriteLine(Loans.loanID);
     }
 }
 
