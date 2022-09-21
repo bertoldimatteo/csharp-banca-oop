@@ -34,16 +34,33 @@ class Client
         this.FiscalCode = fiscalCode;   
         this.Salary = salary;
         Client.clientID++;
-        Console.WriteLine(Client.clientID);
     }
+
+    
 }
 
 class Loans
 {
-    static public int id;
+    static public int loanID = 0;
     private string client;
     private int amount;
     private int rate;
     private int startRateYear;
     private int endRateYear;
+    public string Client { get; set; }
+    public int Amount { get; set; }
+    public int Rate { get; set; }   
+    public int StartRateYear { get; set; }
+    public int EndRateYear { get; set; }
+
+    public Loans(string client, int amount, int rate, int startRateYear, int endRateYear)
+    {
+        this.Client = client;
+        this.Amount = amount;
+        this.Rate = rate;
+        this.StartRateYear = startRateYear;
+        this.EndRateYear = endRateYear;
+        Loans.loanID++;
+    }
 }
+
