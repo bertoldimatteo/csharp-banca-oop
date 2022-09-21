@@ -11,6 +11,13 @@ Loans loan1 = new Loans(user1, 15000, 312.50, 2022);
 Loans loan2 = new Loans(user2, 30000, 625.00, 2022);
 Loans loan3 = new Loans(user3, 5000, 106.34, 2022);
 
+Bank bank1 = new Bank("Unicredit");
+
+bank1.addClient(user1);
+bank1.addClient(user2);
+bank1.addClient(user3);
+
+bank1.editClient(user2, "Alan", "Caulo", 5000.00);
 class Bank
 {
     private string name;
@@ -33,7 +40,7 @@ class Bank
         clients.Add(client);
     }
 
-    public void editClient(Clients client, string name, string surname, int salary)
+    public void editClient(Clients client, string name, string surname, double salary)
     {
         client.Name = name;
         client.Surname = surname;
