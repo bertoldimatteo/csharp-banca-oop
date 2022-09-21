@@ -3,8 +3,11 @@
 class Bank
 {
     private string name;
-    
-} 
+
+    //un insieme di clienti (una lista)
+
+    //un insieme di prestiti concessi ai clienti (una lista)
+}
 
 class Client
 {
@@ -12,6 +15,7 @@ class Client
     private string surname;
     private string fiscalCode;
     private double salary;
+    static public int clientID;
 }
 
 class Loans
