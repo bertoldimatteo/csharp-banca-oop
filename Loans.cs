@@ -24,12 +24,11 @@ class Loans
     public int StartRateYear { get; set; }
     public int EndRateYear { get; set; }
 
-    public Loans(Clients clients, int amount, double rate, int startRateYear)
+    public Loans(Clients clients, int amount, int startRateYear)
     {
         this.Id = Loans.currentLoanID++;
         this.clients = clients;
         this.amount = amount;
-        this.rate = rate;
         this.StartRateYear = startRateYear;
     }
 }
