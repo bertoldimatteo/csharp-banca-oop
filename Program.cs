@@ -58,9 +58,22 @@ class Bank
         }
         return results;
     }
-        
-        
-        
+
+    public List<Loans> searchLoans(int id)
+    {
+        List<Loans> results = new List<Loans>();
+
+        foreach (Loans loan in loans)
+        {
+            if (loan.Id == id)
+            {
+                results.Add(loan);
+            }
+        }
+        return results;
+    }
+
+
 }
 
 class Clients
