@@ -4,6 +4,9 @@ Client user1 = new Client("Mario", "Rossi", "AAAAA", 25000.00);
 Client user2 = new Client("Paolo", "Biondi", "BBBBB", 17000.10);
 Client user3 = new Client("Carlo", "Neri", "CCCCC", 4900.80);
 
+Console.WriteLine($"ID cliente {user1.Id} Nome cliente {user1.Name}");
+Console.WriteLine($"ID cliente {user2.Id} Nome cliente {user2.Name}");
+
 Loans loan1 = new Loans("user1", 15000, 312.50, 2022, 2024);
 Loans loan2 = new Loans("user2", 30000, 625.00, 2022, 2024);
 Loans loan3 = new Loans("user3", 5000, 106.34, 2022, 2024);
@@ -19,13 +22,15 @@ class Bank
 
 class Client
 {
+    private int id;
     private string name;
     private string surname;
     private string fiscalCode;
     private double salary;
-    static public int clientID = 0;
+    static public int currentClientID = 1;
 
     //Getter Setter
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Surname { get; set; }
     public string FiscalCode { get; set; }
@@ -37,8 +42,7 @@ class Client
         this.Surname = surname;
         this.FiscalCode = fiscalCode;   
         this.Salary = salary;
-        Client.clientID++;
-        Console.WriteLine(Client.clientID);
+        this.Id = Client.currentClientID++;
     }
 
     
